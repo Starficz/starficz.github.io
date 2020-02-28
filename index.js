@@ -56,8 +56,9 @@ function preLoad(){
 	var characterTable;
 
 	fetch("character_table.json")
-  	.then(function(response){
-  		characterTable = response.json();
+  	.then((response) => {
+  		return response.json();
+  	}).then((characterTable) => {
   		console.log(characterTable);
   		document.getElementById('skillLv').value = 10;
 		document.getElementById('expLv').value = 169;

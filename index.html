@@ -54,16 +54,25 @@
 	<!-- Projects Section -->
 	<section id="projects" class="projects-section bg-light">
 		<div class="container">
-			<div class="jumbotron">
-				<div class="d-flex justify-content-between">
-					<div class="p-2 bd-highlight">
-						<label for="customRange">Skill Lv:</label>
-						<output name="ageOutputName" id="skillLvLabel">10</output>
-						<input type="range" class="custom-range" value="10" min="1" max="10" step="1" id="skillLv" oninput="skillLvLabel.value = skillLv.value">
+			<div class="jumbotron" >
+				<div class="d-flex">
+					<div class="d-flex flex-grow-1 flex-column">
+					
+						<div class="p-2 bd-highlight">
+							<label for="skillLv">Skill Lv:</label>
+							<output id="skillLvLabel">10</output>
+							<input type="range" class="custom-range" min="1" max="10" step="1" id="skillLv" oninput="skillLvLabel.value = skillLv.value">
+						</div>
+
+						<div class="p-2 bd-highlight">
+							<label for="expLv">Elite</label>
+							<output id="eliteLvLabel">0</output>
+							<label for="expLv">Level</label>
+							<output id="expLvLabel">0</output>
+							<input type="range" class="custom-range" min="0" max="209" step="1" id="expLv" oninput="expLabel(expLv.value)">
+						</div>
 					</div>
-					<div class="p-2 bd-highlight">
-						<div id="root"></div>
-					</div>
+					<div class="p-2 pl-4 ml-auto bd-highlight" id="root"></div>
 				</div>
 			</div>
 		</div>
@@ -139,9 +148,11 @@
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	
-	<!-- Custom scripts for this template -->
-	<script src="https://unpkg.com/d3@3/d3.min.js"></script>
-	<script src="https://unpkg.com/function-plot@1/dist/function-plot.js"></script>
+	<!-- Plotting libraries -->
+	<script src="vendor/d3/d3.min.js"></script>
+	<script src="vendor/function-plot/dist/function-plot.js"></script>
+
+	<!-- Custom scripts for this site -->
 	<script src="index.js"></script>
 
 </body>

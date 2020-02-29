@@ -30,10 +30,9 @@ function loadData(){
 
 function scalePlot(){
 	//reset the plot
-	functionPlot({
-		target: root, 
-	});
+	functionPlot({target: root});
 
+	//find the new viewport size and correct the plot
 	options.width = document.getElementById('root').offsetWidth;
 	options.height = document.getElementById('root').offsetWidth * 2/3;
 	functionPlot(options);
@@ -79,9 +78,9 @@ var options = {
 	]
 };
 
-window.onload = function(){
+window.addEventListener('load', function(event){
 	scalePlot();
-}
+});
 
 window.addEventListener('resize', function(event){
 	scalePlot();

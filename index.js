@@ -27,46 +27,64 @@ function loadData(){
   	});
 }
 
-window.onload = function(){
+
+function scalePlot(){
+	//reset the plot
 	functionPlot({
-		target: root,
-		xAxis: { label: 'Armour', domain: [0, 2100] },
-		yAxis: { label: 'DPS', domain: [0, 3000] },
-		width: document.getElementById('root').offsetWidth,
-		height: document.getElementById('root').offsetWidth * 2/3,
-		tip: {
-			renderer: function() {}
-		},
-		grid: false,
-		disableZoom: true,
-		data: [
-			{
-				fn: "900 - x",
-			}
-		],
-		annotations: [
-			{
-				x: 100,
-				text: 'Basic Soldier',
-			},
-			{
-				x: 250,
-				text: 'Boss / Armored Caster',
-			},
-			{
-				x: 500,
-				text: 'Armored Soldier',
-			},
-			{
-				x: 750,
-				text: 'Armed Militant (Axe)',
-			},
-			{
-				x: 1000,
-				text: 'Armored Heavy',
-			}
-		]
+		target: root, 
 	});
+
+	options.width = document.getElementById('root').offsetWidth;
+	options.height = document.getElementById('root').offsetWidth * 2/3;
+	functionPlot(options);
 }
+
+var options = {
+	target: root,
+	xAxis: { label: 'Armour', domain: [0, 2100] },
+	yAxis: { label: 'DPS', domain: [0, 3000] },
+	width: document.getElementById('root').offsetWidth,
+	height: document.getElementById('root').offsetWidth * 2/3,
+	tip: {
+		renderer: function() {}
+	},
+	grid: false,
+	disableZoom: true,
+	data: [
+		{
+			fn: "900 - x",
+		}
+	],
+	annotations: [
+		{
+			x: 100,
+			text: 'Basic Soldier',
+		},
+		{
+			x: 250,
+			text: 'Boss / Armored Caster',
+		},
+		{
+			x: 500,
+			text: 'Armored Soldier',
+		},
+		{
+			x: 750,
+			text: 'Armed Militant (Axe)',
+		},
+		{
+			x: 1000,
+			text: 'Armored Heavy',
+		}
+	]
+};
+
+window.onload = function(){
+	scalePlot();
+}
+
+window.addEventListener('resize', function(event){
+	scalePlot();
+});
 
 loadData();

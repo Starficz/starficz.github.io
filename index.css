@@ -3,6 +3,58 @@
     margin: 0 auto;
 }
 
-#mainNav {
-  background-color: #222222;
+.bg-grey-1 {
+	background-color: #111111;
+}
+
+.bg-grey-2 {
+	background-color: #222222;
+}
+
+.bg-grey-3 {
+	background-color: #333333;
+}
+
+.bg-grey-4 {
+	background-color: #444444;
+}
+
+.bg-grey-5 {
+	background-color: #555555;
+}
+
+.bg-grey-6 {
+	background-color: #666666;
+}
+
+.bg-grey-7 {
+	background-color: #777777;
+}
+
+.bg-grey-8 {
+	background-color: #888888;
+}
+
+.bg-grey-9 {
+	background-color: #999999;
+}
+
+.bg-grey-a {
+	background-color: #aaaaaa;
+}
+
+.bg-grey-b {
+	background-color: #bbbbbb;
+}
+
+.bg-grey-c {
+	background-color: #cccccc;
+}
+
+.bg-grey-d {
+	background-color: #dddddd;
+}
+
+.bg-grey-e {
+	background-color: #eeeeee;
 }

@@ -1,50 +1,11 @@
-functionPlot({
-	target: root,
-	xAxis: { label: 'Armour', domain: [0, 2100] },
-	yAxis: { label: 'DPS', domain: [0, 3000] },
-	width: 580,
-  	height: 400,
-	tip: {
-		renderer: function() {}
-	},
-	grid: false,
-	disableZoom: true,
-	data: [
-		{
-			fn: "2000 - x",
-		}
-	],
-	annotations: [
-		{
-			x: 100,
-			text: 'Basic Soldier',
-		},
-		{
-			x: 250,
-			text: 'Boss / Armored Caster',
-		},
-		{
-			x: 500,
-			text: 'Armored Soldier',
-		},
-		{
-			x: 750,
-			text: 'Armed Militant (Axe)',
-		},
-		{
-			x: 1000,
-			text: 'Armored Heavy',
-		}
-	]
-});
-
 function expLabel(expLv){
+	expLv = parseInt(expLv)
 	var eliteLvLabel = document.getElementById('eliteLvLabel');
 	var expLvLabel = document.getElementById('expLvLabel');
 
 	if(expLv < 50){
 		eliteLvLabel.value = 0;
-		expLvLabel.value = parseInt(expLv) + 1;
+		expLvLabel.value = expLv + 1;
 	}
 	else{
 		eliteLvLabel.value = Math.floor((expLv - 49) / 81) + 1;
@@ -52,7 +13,7 @@ function expLabel(expLv){
 	}
 };
 
-function preLoad(){
+function loadData(){
 	var characterTable;
 
 	fetch("character_table.json")
@@ -66,5 +27,46 @@ function preLoad(){
   	});
 }
 
-preLoad();
+window.onload = function(){
+	functionPlot({
+		target: root,
+		xAxis: { label: 'Armour', domain: [0, 2100] },
+		yAxis: { label: 'DPS', domain: [0, 3000] },
+		width: document.getElementById('root').offsetWidth,
+		height: document.getElementById('root').offsetWidth * 2/3,
+		tip: {
+			renderer: function() {}
+		},
+		grid: false,
+		disableZoom: true,
+		data: [
+			{
+				fn: "900 - x",
+			}
+		],
+		annotations: [
+			{
+				x: 100,
+				text: 'Basic Soldier',
+			},
+			{
+				x: 250,
+				text: 'Boss / Armored Caster',
+			},
+			{
+				x: 500,
+				text: 'Armored Soldier',
+			},
+			{
+				x: 750,
+				text: 'Armed Militant (Axe)',
+			},
+			{
+				x: 1000,
+				text: 'Armored Heavy',
+			}
+		]
+	});
+}
 
+loadData();

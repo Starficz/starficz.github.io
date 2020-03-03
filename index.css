@@ -58,3 +58,27 @@
 .bg-grey-e {
 	background-color: #eeeeee;
 }
+
+.op-rarity-0 {
+    background-color: #e2e2e2;
+}
+
+.op-rarity-1 {
+    background-color: #DCE437;
+}
+
+.op-rarity-2 {
+    background-color: #00B3FD;
+}
+
+.op-rarity-3 {
+    background-color: #B9BCD9;
+}
+
+.op-rarity-4 {
+    background-color: #ECD799;
+}
+
+.op-rarity-5 {
+    background-color: #EEBB38;
+}

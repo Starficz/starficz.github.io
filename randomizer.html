@@ -32,11 +32,11 @@
 				<li class="nav-item active">
 					<a class="nav-link" href="index.html">Home</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link" href="randomizer.html">Randomizer</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="dps-defense-visualizer.html">DPS-Defense Visualizer</a>
+					<a class="nav-link active" href="dps-defense-visualizer.html">DPS-Defense Visualizer</a>
 				</li>
 			</ul>
 		</div>
@@ -44,26 +44,36 @@
 	
 	
 	<!-- Projects Section -->
-	<section class="bg-grey-c" id="projects">
-		<div class="container-fluid py-5 col-8">
-			<div class="d-flex justify-content-center">
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-body">
-							This is some text within a card body.
-						</div>
-					</div>
+	<section id="projects">
+		<div class="container-fluid bg-grey-c py-5">
+			<button type="button" class="btn btn-primary p-2" data-toggle="modal" data-target="#exampleModal">
+				Select Missing Ops 
+			</button>
+
+			<button type="button" class="btn btn-primary p-2" id="generateRandomSquad">
+				Generate
+			</button>
+			
+			<div class="d-flex flex-wrap justify-content-center" id="opRandomizer"></div>
+		</div>
+	</section>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content bg-grey-a">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Select All Missing Ops (Operators you do not have)</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
 				</div>
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-body">
-							This is some text within a card body.
-						</div>
-					</div>
+				<div class="modal-body d-flex flex-wrap" id="opSelectionScreen">
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+
 
 
 	<!-- Footer -->
@@ -84,7 +94,8 @@
 	<script src="vendor/function-plot.min.js"></script>
 
 	<!-- Custom scripts for this site -->
-	<script src="index.js"></script>
+	<script src="helper.js"></script>
+	<script src="randomizer.js"></script>
 
 </body>
 

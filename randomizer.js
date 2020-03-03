@@ -25,9 +25,15 @@ generateRandomSquad.onclick = function generateRandomSquad(){
 
 	document.getElementById("opRandomizer").textContent = "";
 
-	for (index of indexs.slice(0,12)){
-		console.log(indexs);
-		document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[index]));
+	var count = 0;
+	var index = 0;
+	while (count < 12){
+
+		if (document.getElementById(characterArray[indexs[index]].appellation).getAttribute("aria-pressed") === "false"){
+			document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
+			count = count + 1;
+		}
+		index = index + 1;
 	}
 }
 

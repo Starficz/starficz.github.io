@@ -78,5 +78,5 @@ function buildCharRandomizer(character){
 	return card;
 }
 
-var notReleased = new Set(["Schwarz", "Ceylon", "Glaucus", "Sussurro", "Hellagur", "Astesia", "Myrtle", "Dur-nar", "Magallan", "Executor", "Flamebringer", "Vermeil", "Breeze", "Ethan", "Mostima", "Waai Fu", "Bison", "May", "Reed", "Broca", "Blaze", "Greythroat", "Ambriel", "Nian", "Aak", "Hung", "Snowsant"]);
+var notReleased = new Set(["Schwarz", "Ceylon", "Glaucus", "Sussurro", "Hellagur", "Astesia", "Myrtle", "Dur-nar", "Magallan", "Executor", "Flamebringer", "Vermeil", "Breeze", "Ethan", "Mostima", "Waai Fu", "Bison", "May", "Reed", "Broca", "Blaze", "Greythroat", "Ambriel", "Nian", "Aak", "Hung", "Snowsant", "Ceobe", "GreyThroat", "Leizi"]);
 

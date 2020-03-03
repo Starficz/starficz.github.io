@@ -27,14 +27,68 @@ generateRandomSquad.onclick = function generateRandomSquad(){
 
 	var count = 0;
 	var index = 0;
-	while (count < 12){
+	var hasMedic = false;
+	var hasVanguard = false;
+	var hasGuard = false;
+	var hasSniper = false;
+	var hasCaster = false;
+	var hasDefender = false;
 
-		if (document.getElementById(characterArray[indexs[index]].appellation).getAttribute("aria-pressed") === "false"){
-			document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
-			count = count + 1;
+	if (document.getElementById("fairMode").getAttribute("class").includes("active")){
+		index = characterArray.length - 1;
+		while (count < 6){
+			if (document.getElementById(characterArray[indexs[index]].appellation).getAttribute("aria-pressed") === "false"){
+				if (characterArray[indexs[index]].profession === "MEDIC" && !hasMedic){
+					document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
+					hasMedic = true;
+					count = count + 1;
+				}
+				if (characterArray[indexs[index]].profession === "PIONEER" && !hasVanguard){
+					document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
+					hasVanguard = true;
+					count = count + 1;
+				}
+				if (characterArray[indexs[index]].profession === "WARRIOR" && !hasGuard){
+					document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
+					hasGuard = true;
+					count = count + 1;
+				}
+				if (characterArray[indexs[index]].profession === "SNIPER" && !hasSniper){
+					document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
+					hasSniper = true;
+					count = count + 1;
+				}
+				if (characterArray[indexs[index]].profession === "CASTER" && !hasCaster){
+					document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
+					hasCaster = true;
+					count = count + 1;
+				}
+				if (characterArray[indexs[index]].profession === "TANK" && !hasDefender){
+					document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
+					hasDefender = true;
+					count = count + 1;
+				}
+			}
+			index = index - 1;
 		}
-		index = index + 1;
+		index = 0;
+		while (count < 12){
+			if (document.getElementById(characterArray[indexs[index]].appellation).getAttribute("aria-pressed") === "false"){
+				document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
+				count = count + 1;
+			}
+			index = index + 1;
+		}
+	} else{
+		while (count < 12){
+			if (document.getElementById(characterArray[indexs[index]].appellation).getAttribute("aria-pressed") === "false"){
+				document.getElementById("opRandomizer").appendChild(buildCharRandomizer(characterArray[indexs[index]]));
+				count = count + 1;
+			}
+			index = index + 1;
+		}
 	}
+
 }
 
 

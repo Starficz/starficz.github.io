@@ -96,6 +96,7 @@ generateRandomSquad.onclick = function generateRandomSquad(){
 
 
 window.addEventListener('load', function(event){
+	$('[data-toggle="tooltip"]').tooltip()
 	loadData.then((characterTable)=>{
 		characterArray = Object.values(characterTable).sort((a, b) => ((a.rarity > b.rarity) > 0) ? -1 : 1);
 

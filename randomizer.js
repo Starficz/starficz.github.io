@@ -20,7 +20,7 @@ function shuffle(array) {
 }
 
 generateRandomSquad.onclick = function generateRandomSquad(){
-	var indexs = [...Array(characterArray.length).keys()]
+	var indexs = [...Array(characterArray.length).keys()];
 	indexs = shuffle(indexs);
 
 	document.getElementById("opRandomizer").textContent = "";
@@ -88,6 +88,9 @@ generateRandomSquad.onclick = function generateRandomSquad(){
 			index = index + 1;
 		}
 	}
+
+	maps = ["LS-5", "AP-5", "CE-5", "SK-5", "4-10"];
+	document.getElementById("opRandomizerRestrictions").innerText = "Map: " + maps[Math.floor(Math.random() * 5)];
 
 }
 

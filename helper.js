@@ -38,11 +38,11 @@ function buildCharButton(character){
 	btn.setAttribute("id", character.appellation);
 	
 	if(notReleased.has(character.appellation)){
-		btn.className = "btn col-1 p-0 btn-outline-dark active"
+		btn.className = "btn col-1 p-0 btn-outline-ban-list active op-rarity-" + character.rarity;
 		btn.setAttribute("aria-pressed", "true");
 	}
 	else{
-		btn.className = "btn col-1 p-0 btn-outline-dark"
+		btn.className = "btn col-1 p-0 btn-outline-ban-list op-rarity-" + character.rarity;
 		btn.setAttribute("aria-pressed", "false");
 	}
 	
@@ -52,7 +52,7 @@ function buildCharButton(character){
 	portrait.setAttribute("src", "img/avatars/" + character.phases[0].characterPrefabKey.replace(/_/g,"-") + "-1.png");
 
 	var charName = document.createElement('div');
-	charName.className = "text-center op-rarity-" + character.rarity;
+	charName.className = "text-center bg-rarity-" + character.rarity;
 	charName.innerText = character.appellation;
 
 	btn.appendChild(portrait);
@@ -63,7 +63,7 @@ function buildCharButton(character){
 function buildCharRandomizer(character){
 
 	var card = document.createElement('div');
-	card.className = "card col-1 p-0 op-rarity-" + character.rarity;
+	card.className = "card col-1 p-0 bg-rarity-" + character.rarity;
 
 	var portrait = document.createElement('img');
 	portrait.className = "card-img-top";

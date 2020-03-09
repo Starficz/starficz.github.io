@@ -59,26 +59,58 @@
 	background-color: #eeeeee;
 }
 
-.op-rarity-0 {
+.bg-rarity-0 {
     background-color: #e2e2e2;
 }
 
-.op-rarity-1 {
+.bg-rarity-1 {
     background-color: #DCE437;
 }
 
-.op-rarity-2 {
+.bg-rarity-2 {
     background-color: #00B3FD;
 }
 
-.op-rarity-3 {
+.bg-rarity-3 {
     background-color: #B9BCD9;
 }
 
-.op-rarity-4 {
+.bg-rarity-4 {
     background-color: #ECD799;
 }
 
-.op-rarity-5 {
+.bg-rarity-5 {
     background-color: #EEBB38;
+}
+
+.btn-outline-ban-list {
+  color: #343a40;
+  border-color: #343a40;
+}
+
+.btn-outline-ban-list:hover {
+  color: #343a40;
+  background-color: #a40000;
+  border-color: #343a40;
+}
+
+.btn-outline-ban-list:focus, .btn-outline-ban-list.focus {
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
+
+.btn-outline-ban-list.disabled, .btn-outline-ban-list:disabled {
+  color: #343a40;
+  background-color: transparent;
+}
+
+.btn-outline-ban-list:not(:disabled):not(.disabled):active, .btn-outline-ban-list:not(:disabled):not(.disabled).active,
+.show > .btn-outline-ban-list.dropdown-toggle {
+  color: #343a40;
+  background-color: #a40000;
+  border-color: #343a40;
+}
+
+.btn-outline-ban-list:not(:disabled):not(.disabled):active:focus, .btn-outline-ban-list:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-ban-list.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
 }

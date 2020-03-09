@@ -46,7 +46,7 @@
 	<!-- Projects Section -->
 	<section id="projects">
 		<div class="container-fluid py-5">
-			<button type="button" class="btn btn-primary p-2" data-toggle="modal" data-target="#exampleModal">
+			<button type="button" class="btn btn-primary p-2" data-toggle="modal" data-target="#banList">
 				Select Missing Ops / Ban list
 			</button>
 			
@@ -72,14 +72,40 @@
 	</section>
 
 	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="banList" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-xl" role="document">
 			<div class="modal-content bg-grey-a">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Select All Missing Ops (Operators you do not have or do not want to use)</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+					<div class="container-fluid">
+						<div class="row p-1">
+							<h5 class="modal-title p-1" id="exampleModalLabel">Select All Missing Ops (Operators you do not have or do not want to use)</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="row">
+							<button type="button" class="btn btn-primary mx-1" id="toggle5">
+								Toggle Ban for 6*
+							</button>
+							<button type="button" class="btn btn-primary mx-1" id="toggle4">
+								Toggle Ban for 5*
+							</button>
+							<button type="button" class="btn btn-primary mx-1" id="toggle3">
+								Toggle Ban for 4*
+							</button>
+							<button type="button" class="btn btn-primary mx-1" id="toggle2">
+								Toggle Ban for 3*
+							</button>
+							<button type="button" class="btn btn-primary mx-1" id="toggle1">
+								Toggle Ban for 2*
+							</button>	
+							<button type="button" class="btn btn-primary mx-1" id="toggle0">
+								Toggle Ban for 1*
+							</button>
+						</div>	
+					</div>				
+
+					
 				</div>
 				<div class="modal-body d-flex flex-wrap" id="opSelectionScreen">
 				</div>

@@ -1,4 +1,5 @@
 var characterArray;
+var toggled = Array(6);
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -19,7 +20,26 @@ function shuffle(array) {
   return array;
 }
 
-generateRandomSquad.onclick = function generateRandomSquad(){
+function toggle(rarity) {
+	var ops = document.getElementsByClassName("op-rarity-".concat(rarity));
+
+	if (toggled[rarity]){
+		for (op of ops){
+			op.classList.remove("active");
+			op.setAttribute("aria-pressed", "false");
+		}
+		toggled[rarity] = false;
+	}
+	else{
+		for (op of ops){
+			op.classList.add("active");
+			op.setAttribute("aria-pressed", "true");
+		}
+		toggled[rarity] = true;
+	}
+}
+
+function generateRandomSquad(){
 	var indexs = [...Array(characterArray.length).keys()];
 	indexs = shuffle(indexs);
 
@@ -106,5 +126,14 @@ window.addEventListener('load', function(event){
 		for (character of characterArray){
 			document.getElementById("opSelectionScreen").appendChild(buildCharButton(character));
 		}
+		document.getElementById("generateRandomSquad").onclick = generateRandomSquad;
 	});
+	toggled.fill(false);
+	
+	document.getElementById("toggle5").onclick = function(){toggle(5)};
+	document.getElementById("toggle4").onclick = function(){toggle(4)};
+	document.getElementById("toggle3").onclick = function(){toggle(3)};
+	document.getElementById("toggle2").onclick = function(){toggle(2)};
+	document.getElementById("toggle1").onclick = function(){toggle(1)};
+	document.getElementById("toggle0").onclick = function(){toggle(0)};
 });

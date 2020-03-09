@@ -89,8 +89,11 @@ generateRandomSquad.onclick = function generateRandomSquad(){
 		}
 	}
 
-	maps = ["LS-5", "AP-5", "CE-5", "SK-5", "4-10"];
-	document.getElementById("opRandomizerRestrictions").innerText = "Map: " + maps[Math.floor(Math.random() * 5)];
+	maps = ["LS-5", "AP-5", "CE-5", "SK-5", "4-10", "4-7", "5-10", "5-7"];
+	document.getElementById("opRandomizerMaps").innerText = "Map: " + maps[Math.floor(Math.random() * maps.length)];
+
+	rules = ["Primaries - You may only use every operator's first skill", "No Pause - Game cannot be paused during the run", "2x Speed Only - Play on double speed", "Permadeath - After an operator dies or retreats, it cannot be brought back."];
+	document.getElementById("opRandomizerRules").innerText = "Rules: " + rules[Math.floor(Math.random() * rules.length)];
 
 }
 
